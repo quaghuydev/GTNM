@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width: 980px;">
+                <!-- Brand/logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="./images/huyicon.ico" alt="logo" style="width:40px;">
+                </a>
+
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thể loại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Xem nhiều</a>
+                    </li>
+
+
+                </ul>
+                <form class="form-inline" action="/action_page.php" style="margin-left: 20px;">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-success">Tìm kiếm</button>
+
+                </form><br>
+
+                <div>
+                    <button onclick="open_login()" type="button" class="btn btn-primary" style="position: absolute; top: 12px;
+                    right: 120px; display:flex ; ">Đăng nhập</button>
+                    <button onclick="open_register()" type="button" class="btn btn-primary" style="position: absolute; top: 12px;
+                    right: 16px; display:flex ; ">Đăng kí</button></div>
+            </nav>
+        </div>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1 style="text-align: center;">Đăng nhập</h1>
+
+
+                <label for="email"><b>Tài khoảng</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn" onclick="closeForm()">Đăng nhập</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Thoát</button>
+                <p style="font-size: 12px;text-align: center;">Bạn chưa có tài khoảng? <a href="#" onclick="open_register()">Tạo tài khoảng</a></p>
+                <p style="font-size: 12px;text-align: center;">
+                    <a href="#" onclick="open_forgot()">Quên mật khẩu</a>
+                </p>
+            </form>
+
+        </div>
+        <div class="form-popup" id="register" style="bottom: 20%;">
+            <form action="/action_page.php" class="form-container">
+                <h1 style="text-align: center;">Đăng kí</h1>
+
+
+                <label for="email"><b>Tài khoảng</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="psw"><b>Xác nhận mật khẩu</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn" onclick="closeForm()">Đăng kí</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Thoát</button>
+                <p style="font-size: 12px;text-align: center;"><a href="#" onclick="open_login()">Đăng nhập</a></p>
+                <p style="font-size: 12px;text-align: center;">
+                    <a href="#" onclick="open_forgot()">Quên mật khẩu</a>
+                </p>
+            </form>
+
+        </div>
+        <div class="form-popup" id="forgotPass">
+            <form action="/action_page.php" class="form-container">
+                <h1 style="text-align: center;">Quên mật khẩu</h1>
+
+
+                <label for="email"><b>Tài khoảng</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+
+
+                <button type="submit" class="btn" onclick="closeForm()">Gửi</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Thoát</button>
+                <p style="font-size: 12px;text-align: center;"><a href="#" onclick="open_login()">Đăng nhập</a></p>
+                <p style="font-size: 12px;text-align: center;">
+                    <a href="#" onclick="open_register()">Đăng kí</a>
+                </p>
+            </form>
+
+        </div>
+        <script>
+            function open_login() {
+                document.getElementById("myForm").style.display = "block"
+                document.getElementById("register").style.display = "none"
+                document.getElementById("forgotPass").style.display = "none"
+
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none"
+                document.getElementById("register").style.display = "none"
+                document.getElementById("forgotPass").style.display = "none"
+
+            }
+
+            function open_register() {
+
+                document.getElementById("myForm").style.display = "none"
+                document.getElementById("register").style.display = "block"
+                document.getElementById("forgotPass").style.display = "none"
+
+            }
+
+            function open_forgot() {
+
+                document.getElementById("myForm").style.display = "none"
+                document.getElementById("register").style.display = "none"
+                document.getElementById("forgotPass").style.display = "block"
+
+            }
+        </script>
+
+    </div>
+    <div class="v1_2">
+        <div class="v1_26"></div>
+        <div class="v1_27"></div>
+        <div class="v1_28"></div>
+        <div class="v1_29"></div>
+        <div class="v1_30"></div>
+        <div class="v1_31"></div>
+        <div class="v1_32"></div>
+        <div class="v1_33"></div>
+        <div class="v1_34"></div>
+        <div class="v1_35"></div>
+        <div class="v1_36"></div>
+        <div class="v1_37"></div>
+        <div class="v1_39"></div>
+        <div class="v1_40"></div>
+        <div class="v1_41"></div>
+        <div class="v1_42"></div>
+        <div class="v1_43"></div>
+        <div class="v1_45"></div>
+        <div class="v1_46"></div>
+        <div class="v1_47"></div>
+        <div class="v1_48"></div>
+        <div class="v1_49"></div>
+        <div class="v1_50"></div>
+        <div class="v1_52"></div>
+        <div class="v1_53"></div>
+        <div class="v1_54"></div>
+        <div class="v1_55"></div>
+        <div class="v1_56"></div>
+        <div class="v1_59"></div>
+        <div class="v1_60"></div>
+        <div class="v1_61"></div>
+        <div class="v1_62"></div>
+        <div class="v1_63"></div>
+        <div class="v1_64"></div>
+        <div class="v1_66"></div>
+        <div class="v1_67"></div>
+        <div class="v1_68"></div>
+        <div class="v1_69"></div>
+        <div class="v1_70"></div>
+        <div class="v1_73"></div>
+        <div class="v1_74"></div>
+        <div class="v1_80"></div>
+        <div class="v1_125"></div>
+        <div class="v1_126"></div>
+        <div class="v1_127"></div>
+        <div class="v1_128"></div>
+        <div class="v1_129"></div>
+        <div class="v1_130"></div>
+        <div class="v1_131"></div>
+        <div class="v1_132"></div>
+        <div class="v1_133"></div>
+        <div class="v1_134"></div>
+        <div class="v1_135"></div>
+        <div class="v1_136"></div>
+        <div class="v1_137"></div>
+        <div class="v1_138"></div>
+        <div class="v1_139"></div>
+        <div class="v1_140"></div>
+        <div class="v1_141"></div>
+        <div class="v1_142"></div>
+        <div class="v1_143"></div>
+        <div class="v1_144"></div>
+        <div class="v1_145"></div>
+        <div class="v1_146"></div>
+        <div class="v1_147"></div>
+        <div class="v1_148"></div>
+        <div class="v1_149"></div>
+        <div class="v1_150"></div>
+        <div class="v1_151"></div>
+        <div class="v1_152"></div>
+        <div class="v1_153"></div>
+        <div class="v1_154"></div>
+        <div class="v1_155"></div>
+        <div class="v1_156"></div>
+        <div class="v1_157"></div>
+        <div class="v1_158"></div>
+        <div class="v1_159"></div>
+        <div class="v1_160"></div>
+        <div class="v1_161"></div>
+        <div class="v1_162"></div>
+        <div class="v1_163"></div>
+        <div class="v1_164"></div>
+        <div class="v1_165"></div>
+        <div class="v1_166"></div>
+        <div class="v1_167"></div>
+        <div class="v1_168"></div>
+        <div class="v1_169"></div>
+        <div class="v1_170"></div>
+        <div class="v1_171"></div>
+        <div class="v1_172"></div>
+        <div class="v1_173"></div>
+        <div class="v1_174"></div>
+        <div class="v1_175"></div>
+        <div class="v1_176"></div>
+        <div class="v1_177"></div>
+        <div class="v1_178"></div>
+        <div class="v1_179"></div>
+        <div class="v1_180"></div>
+        <div class="v1_181"></div>
+        <div class="v1_182"></div>
+        <div class="v1_183"></div>
+        <div class="v1_184"></div>
+        <div class="v1_185"></div>
+        <div class="v1_186"></div>
+        <div class="v1_187"></div>
+        <div class="v1_188"></div>
+        <div class="v1_189"></div>
+        <div class="v1_190"></div>
+        <div class="v1_191"></div>
+        <div class="v1_355"></div>
+        <div class="v1_399"></div>
+        <div class="v1_400"></div>
+        <div class="v1_401"></div>
+        <div class="v1_402"></div>
+        <div class="v1_403"></div>
+        <div class="v1_404"></div>
+        <div class="v1_405"></div>
+        <div class="v1_406"></div>
+        <div class="v1_407"></div>
+        <div class="v1_408"></div>
+        <div class="v1_409"></div>
+        <div class="v1_410"></div>
+        <div class="v1_411"></div>
+        <div class="v1_413"></div>
+        <div class="v1_414"></div>
+        <div class="v1_415"></div>
+        <div class="v1_416"></div>
+        <div class="v1_417"></div>
+        <div class="v1_418"></div>
+        <div class="v1_419"></div>
+        <div class="v1_420"></div>
+        <div class="v1_421"></div>
+        <div class="v1_422"></div>
+        <div class="v1_423"></div>
+        <div class="v1_424"></div>
+        <div class="v1_425"></div>
+        <div class="v1_462"></div><span class="v1_497">Phim Sắp Chiếu</span><span class="v1_498">Xem Thêm</span><span class="v1_499">Tháng 1-2022</span><span class="v1_500">1,119</span><span class="v1_502">Princess Connect!</span><span class="v1_503">Tháng 1-2022</span>
+        <span class="v1_504">835</span><span class="v1_506">Leadale no Daichi nite</span><span class="v1_507">Tháng 1-2022</span><span class="v1_510">Cue!</span><span class="v1_511">Tháng 1-2022</span><span class="v1_512">4,736</span><span class="v1_514">Arifureta Shokugyou de Sekai Saikyou 2nd </span>
+        <span class="v1_515">Tháng 1-2022</span><span class="v1_518">Kenja no Deshi wo Nanoru </span><span class="v1_522">Doremon</span><span class="v1_547">Anime</span><span class="v1_548">03/?? Tập</span><span class="v1_549">3,551</span><span class="v1_550">Q4 2021</span>
+        <span class="v1_551">Yuuki Yuuna wa Yuusha </span><span class="v1_552">02/?? Tập</span><span class="v1_553">3,812</span><span class="v1_554">Q4 2021</span><span class="v1_555">Taishou Otome Oto</span><span class="v1_556">03/?? Tập</span>
+        <span class="v1_557">2,010</span>
+        <span class="v1_558">Q4 2021</span><span class="v1_559">Deji Meets Girl</span><span class="v1_560">01/?? Tập</span><span class="v1_561">696</span><span class="v1_562">Q4 2021</span><span class="v1_563">180 Byou de Kimi</span><span class="v1_564">03/13 Tập</span>
+        <span class="v1_565">3,611</span><span class="v1_566">Q4 2021</span><span class="v1_567">Selection Project</span><span class="v1_568">02/24 Tập</span><span class="v1_569">9,340</span><span class="v1_570">Q4 2021</span><span class="v1_571">Platinum End</span>
+        <span class="v1_572">01/?? Tập</span><span class="v1_573">3,491</span><span class="v1_574">Q4 2021</span><span class="v1_575">Ousama Ranking</span><span class="v1_576">15/24 Tập</span><span class="v1_577">23,875</span><span class="v1_578">Q3 2021</span>
+        <span class="v1_579">Shiroi Suna no Aquatope</span><span class="v1_612">Xem Thêm</span><span class="v1_684">Lịch sử xem phim</span><span class="v1_685">Xem tất cả</span><span class="v1_686">Bảng xếp hạng</span><span class="v1_687">Ngày</span>
+        <span class="v1_688">Tuần</span><span class="v1_689">Tháng</span><span class="v1_690">Mùa</span><span class="v1_691">Năm</span><span class="v1_692">1</span><span class="v1_693">Detective Conan</span><span class="v1_694">1022/??? Tập</span>
+        <span class="v1_695">Lượt xem:</span><span class="v1_696">1,161</span><span class="v1_697">2</span><span class="v1_698">One Piece</span><span class="v1_699">995/??? Tập</span><span class="v1_700">Lượt xem:</span><span class="v1_701">1,017</span>
+        <span class="v1_702">3</span><span class="v1_703">Black Clover (TV)</span><span class="v1_704">170/170 Tập</span><span class="v1_705">Lượt xem:</span><span class="v1_706">883</span><span class="v1_752">Copyright © 2021 .</span>
+        <span class="v1_753">ANIMETVN.TV</span><span class="v1_754">. All Rights Reserved.</span>
+        <div class="v1_758"></div>
+        <div class="v1_77"></div><span class="v1_519">Tháng 1-2022</span>
+        <div class="v1_4"></div>
+    </div>
+
+</body>
+
+</html>
